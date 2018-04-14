@@ -12,8 +12,7 @@ import {
     webSocketUrl,
     stomp_heartbeat_in,
     stomp_heartbeat_out,
-    stomp_reconnect_delay,
-    orderValidationExchange
+    stomp_reconnect_delay
 } from './properties/web.property';
 
 declare var Stomp: any;
@@ -126,16 +125,6 @@ export class WebSocketDataService {
             });
 
         return webSocketObservable.share();
-    }
-
-    // subscribe to order validation queue
-    subscribeToOrderValidationQueue(routingKey: string): Observable<any> {
-
-        return this.subscribeToQueue(orderValidationExchange, routingKey,
-            {
-                'x-queue-name': routingKey + '-' + this.stompUniqId,
-                'ack': 'client'
-            });
     }
 
     // the current connection status with the STOMP broker

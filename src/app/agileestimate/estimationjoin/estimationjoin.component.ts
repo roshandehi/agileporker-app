@@ -37,14 +37,12 @@ export class EstimationjoinComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    // private _stompService: StompService
     private webSocketDataService: WebSocketDataService
   ) { }
 
   ngOnInit() {
     this.currentSessionId = this.route.snapshot.paramMap.get('id');
-   this.webSocketDataService.connected();
-   //this.webSocketDataService.
+    this.webSocketDataService.connected();
   }
 
   ngOnDestroy() {
@@ -55,14 +53,14 @@ export class EstimationjoinComponent implements OnInit {
 
 
     console.log('on Join');
-   
 
-    // let name = this.currentPlayer ? this.currentPlayer : null;
-    // if (name) {
-    //   this.sendPlayerMessage(name, '0');
 
-    //   this.router.navigate(['estimationsession/' + this.currentSessionId, { 'currentPlayer': this.currentPlayer }]);
-    // }
+    let name = this.currentPlayer ? this.currentPlayer : null;
+    if (name) {
+      this.sendPlayerMessage(name, '0');
+
+      this.router.navigate(['estimationsession/' + this.currentSessionId, { 'currentPlayer': this.currentPlayer }]);
+    }
   }
 
   public sendPlayerMessage(player: string, points: string) {

@@ -12,6 +12,3 @@ export const webSocketUrl = 'http://localhost:8080/gs-guide-websocket';
 export const stomp_heartbeat_in = 5000;
 export const stomp_heartbeat_out = 10000;
 export const stomp_reconnect_delay = 15000;
-
-/* Notification framework info */
-export const orderValidationExchange = '/exchange/onevz_omni_event_order_ui_OrderUIEvent/';

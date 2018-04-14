@@ -11,7 +11,7 @@ import { WebSocketDataService } from './websocket-data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'VZ Agile';
+  title = 'Agile Porker';
 
 stompSub: Subscription;
 
