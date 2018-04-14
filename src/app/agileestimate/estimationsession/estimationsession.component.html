@@ -1,0 +1,135 @@
+<div class="ppContainer">
+  <!-- Pointing section -->
+  <div class="row">
+    <!-- Left Column -->
+    <div class="span5">
+      <div class="board site-hidden" style="display: block;">
+        <h1 id="playerName">{{currentPlayer}}</h1>
+
+        <div id="storyDescription">
+          <div>
+            <label>Story Description:</label>
+          </div>
+          <div>
+            <textarea class="span5 expand20-100 toolTipLong" title="" data-placement="right" data-original-title="Optional story details - shared with other players"
+              style="height: 20px; overflow: hidden; padding-top: 0px; padding-bottom: 0px;"></textarea>
+          </div>
+        </div>
+
+        <div class="row" style="border-bottom: 1px solid #eeeeee; margin-bottom: 10px; padding-bottom: 5px;">
+          <div class="span2">
+            <input id="resetVotes" type="button" value="Clear Votes" class="btn btn-primary toolTipLong" title="" data-placement="left"
+              data-original-title="Use when voting is complete - votes will be cleared for all players &amp; observers">
+          </div>
+          <div class="span2">
+            <input id="showVotes" type="button" value="Show Votes" class="btn btn-primary toolTipLong" title="" data-placement="right"
+              data-original-title="Show votes to all players (useful when a user is not responding)">
+          </div>
+        </div>
+        <div id="pointButtons">
+          <div class="btn-row row">
+            <ng-template ngFor let-pointValue [ngForOf]="pointValues">
+              <div class="span1"><input type="button" value="{{pointValue}}" (click)="onVote($event)" class="voteButton btn btn-info btn-mini btn-width"></div>
+            </ng-template>
+          </div>
+        </div>
+        <div id="playerArea">
+          <div class="header row">
+            <div class="span3">
+              <strong>Player</strong>
+            </div>
+            <div class="span1">
+              <strong>Points</strong>
+            </div>
+          </div>
+          <div class="row player">
+            <div *ngFor="let player of playerList">
+              <div class="span3 playerName"><i class="icon"></i> {{player.name}}</div>
+              <div class="span1 playerPoints">{{player.points}}</div>
+            </div>
+          </div>
+        </div>
+        <h4 style="margin-top: 50px;" class="inviteLink" data-content="Invite a teammate!" data-original-title="" title="">Want to invite someone? Send this link:</h4>
+        <p>
+          <a href="">Link goes here.</a>
+        </p>
+      </div>
+      <!-- Right Column -->
+      <div class="span4 pointing-right-column">
+        <div class="pointTimer site-hidden" style="opacity: 100; display: block;">
+          <strong>Time:</strong> <span id="pointTimer" class="text-warning bold-text">00:03:45</span>
+        </div>
+        <div class="statistics site-hidden">
+          <h3>Statistics</h3>
+          <div class="row">
+            <div class="span2 statistics-points">
+              <strong>Time taken:</strong>
+            </div>
+            <div id="timeTaken" class="span2 statistics-votes">
+            </div>
+          </div>
+          <div class="row">
+            <div class="span2 statistics-points">
+              <strong>Average:</strong>
+            </div>
+            <div id="averagePointValue" class="span2 statistics-votes">
+            </div>
+          </div>
+          <div class="row pointVoteHeader">
+            <div class="span2 statistics-points"><strong>Points</strong></div>
+            <div class="span2 statistics-votes"><strong>Votes</strong></div>
+          </div>
+          <div id="pointVoteArea">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turn Arhive Area -->
+    <div class="row turnArchiveArea site-hidden">
+      <div class="span9">
+        <h3 style="text-align: center;">History</h3>
+        <div class="row turnArchiveStatistics">
+          <div class="span4">
+            <div class="row turnArchiveTable">
+            </div>
+          </div>
+          <div class="span5 archivePlayersStats site-hidden">
+            <div id="archiveStoryDescriptionLabel"><strong>Description:</strong></div>
+            <div id="archiveStoryDescription" style="margin-bottom: 10px;"></div>
+            <div class="row">
+              <div class="span2">
+                <strong>Time taken:</strong>
+              </div>
+              <div id="turnArchiveTimeTaken" class="span2">
+              </div>
+            </div>
+            <div class="row">
+              <div class="span2 statistics-points">
+                <strong>Average:</strong>
+              </div>
+              <div id="turnArchiveAveragePointValue" class="span2 statistics-votes">
+              </div>
+            </div>
+            <div class="row pointVoteHeader">
+              <div class="span2"><strong>Points</strong></div>
+              <div class="span2"><strong>Votes</strong></div>
+            </div>
+            <div id="turnArchivePointVoteArea">
+            </div>
+            <div id="turnArchivePlayerArea">
+              <div class="header row">
+                <div class="span2">
+                  <strong>Player</strong>
+                </div>
+                <div class="span1">
+                  <strong>Points</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
