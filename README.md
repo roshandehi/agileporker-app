@@ -1,5 +1,10 @@
 # agileporker-app
 
+This project is working in progress.
+
+You could use following instructions to run this Angular project.
+
+## Angular Project Details
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
 
 ## Development server
